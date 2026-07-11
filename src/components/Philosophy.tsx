@@ -5,8 +5,8 @@ import Image from "next/image";
 
 const chevrons = [
   { image: "/assets/founder.png", alt: "Sayyed Imran Qadri" },
-  { image: "/assets/projects/95-west.jpg", alt: "Commercial Scale" },
-  { image: "/assets/projects/ebony-tower.jpg", alt: "Luxury Residential" },
+  { image: "/assets/projects/ebony-tower.jpg", alt: "Commercial Scale" },
+  { image: "/assets/projects/95-west.jpg", alt: "Luxury Residential" },
   { image: "/assets/cofounder.png", alt: "Mahesh Bankar" },
 ];
 

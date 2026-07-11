@@ -68,7 +68,7 @@ const projects = [
     developer: "Stans Buildtech",
     location: "Malad West",
     apartments: "200",
-    image: "/assets/projects/95-west.jpg",
+    image: "/assets/projects/ebony-tower.jpg",
   },
   {
     id: "09",
@@ -76,7 +76,7 @@ const projects = [
     developer: "SMGK Developers",
     location: "Jogeshwari West",
     apartments: "90",
-    image: "/assets/projects/ebony-tower.jpg",
+    image: "/assets/projects/95-west.jpg",
   },
 ];
 
@@ -219,7 +219,7 @@ export default function Projects() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center dark:bg-black/90 bg-white/80 p-4 backdrop-blur-sm"
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
@@ -305,10 +305,15 @@ export default function Projects() {
                   <a
                     href="#contact"
                     onClick={(e) => {
+                      e.preventDefault();
                       setSelectedProject(null);
-                      const element = document.querySelector("#contact");
+                      const element = document.querySelector("#contact") as HTMLElement;
                       if (element) {
-                        element.scrollIntoView({ behavior: "smooth" });
+                        if (window.lenis) {
+                          window.lenis.scrollTo(element, { offset: -80, duration: 1.5 });
+                        } else {
+                          element.scrollIntoView({ behavior: "smooth" });
+                        }
                       }
                     }}
                     className="w-full text-center py-4 text-xs font-bold uppercase tracking-widest dark:text-black bg-gold rounded-full hover:bg-gold-hover transition-premium duration-300 flex items-center justify-center gap-2 shadow-lg shadow-gold/20"

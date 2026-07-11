@@ -10,7 +10,7 @@ const leaders = [
     role: "Founder & Managing Director",
     bio: "At the helm of Indo Global Properties, Imran Quadri is a multi-disciplinary entrepreneur with experience across hospitality and real estate. His exposure to diverse business environments has shaped a strong understanding of people, positioning, micro-markets, and buyer behavior. With a clear vision to build a performance-driven sales organization, he founded Indo Global Properties on the principles of speed, discipline, and execution excellence. His hands-on leadership, strategic clarity, and market insight continue to shape the company’s culture, strengthen its credibility, and drive consistent growth in a competitive real estate landscape.",
     image: "/assets/founder.png",
-    linkedin: "#",
+    linkedin: "https://in.linkedin.com/in/sayyedimranqadri?trk=profile-badge",
     email: "imran@indoglobalproperties.com",
   },
   {
@@ -61,12 +61,14 @@ export default function Leadership() {
                   className="object-cover object-center group-hover:scale-105 transition-premium duration-700"
                 />
                 
-                {/* Visual Gold Overlay inside the image container */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                {/* Visual Gold Overlay inside the image container - always visible on mobile, hover-only on desktop */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
                   <div className="flex gap-3">
-                    <a href={leader.linkedin} className="p-2 rounded-full bg-gold text-black hover:bg-gold-hover hover:scale-105 duration-300" aria-label="LinkedIn">
-                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    </a>
+                    {leader.linkedin && leader.linkedin !== "#" && (
+                      <a href={leader.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gold text-black hover:bg-gold-hover hover:scale-105 duration-300" aria-label="LinkedIn">
+                        <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                      </a>
+                    )}
                     <a href={`mailto:${leader.email}`} className="p-2 rounded-full bg-gold text-black hover:bg-gold-hover hover:scale-105 duration-300">
                       <Mail className="w-3.5 h-3.5" />
                     </a>
