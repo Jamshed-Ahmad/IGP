@@ -261,7 +261,7 @@ export default function Contact() {
                   <button
                     disabled={isSubmitting}
                     type="submit"
-                    className="w-full py-4 text-xs font-bold uppercase tracking-widest dark:text-black bg-gold hover:bg-gold-hover disabled:bg-neutral-800 disabled:dark:text-neutral-500 text-neutral-400 rounded-xl transition-premium duration-300 flex items-center justify-center gap-2 shadow-lg shadow-gold/10 relative overflow-hidden group/btn"
+                    className="w-full py-4 text-xs font-bold uppercase tracking-widest dark:text-black text-neutral-900 bg-gold hover:bg-gold-hover disabled:bg-neutral-800 disabled:dark:text-neutral-500 rounded-xl transition-premium duration-300 flex items-center justify-center gap-2 shadow-lg shadow-gold/10 relative overflow-hidden group/btn"
                   >
                     {isSubmitting ? (
                       "Sending Proposal..."

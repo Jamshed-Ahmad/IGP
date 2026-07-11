@@ -228,10 +228,10 @@ export default function Projects() {
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="relative w-full max-w-4xl glass border border-border-line rounded-3xl overflow-hidden shadow-2xl p-6 md:p-10 flex flex-col md:flex-row gap-8 max-h-[90vh] overflow-y-auto"
             >
-              {/* Close Button */}
+              {/* Close Button - fixed on mobile for ease of access, absolute on desktop */}
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 p-2 rounded-full bg-white/5 border border-border-line hover:border-gold hover:text-gold transition-premium duration-300"
+                className="fixed top-4 right-4 md:absolute md:top-6 md:right-6 z-50 p-2.5 rounded-full bg-neutral-900/80 md:bg-white/5 border border-border-line text-white md:text-inherit hover:border-gold hover:text-gold transition-premium duration-300 shadow-lg md:shadow-none"
                 aria-label="Close details"
               >
                 <X className="w-5 h-5" />
