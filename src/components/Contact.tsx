@@ -9,7 +9,7 @@ export default function Contact() {
     name: "",
     email: "",
     phone: "",
-    interest: "General Inquiry",
+    interest: "",
     message: "",
   });
   
@@ -28,7 +28,7 @@ export default function Contact() {
         name: "",
         email: "",
         phone: "",
-        interest: "General Inquiry",
+        interest: "",
         message: "",
       });
       
@@ -151,7 +151,7 @@ export default function Contact() {
                       name="name"
                       value={formState.name}
                       onChange={handleInputChange}
-                      placeholder="e.g. Rakesh Agarwal"
+                      placeholder="e.g. James Kalvin"
                       className="px-5 py-3 dark:bg-neutral-900 bg-neutral-100 border border-border-line rounded-xl dark:text-neutral-100 text-neutral-900 text-sm focus:border-gold/50 focus:ring-1 focus:ring-gold/50 outline-none transition-all duration-300"
                     />
                   </div>
@@ -166,7 +166,7 @@ export default function Contact() {
                       name="phone"
                       value={formState.phone}
                       onChange={handleInputChange}
-                      placeholder="e.g. +91 9876543210"
+                      placeholder="e.g. 8429**9343"
                       className="px-5 py-3 dark:bg-neutral-900 bg-neutral-100 border border-border-line rounded-xl dark:text-neutral-100 text-neutral-900 text-sm focus:border-gold/50 focus:ring-1 focus:ring-gold/50 outline-none transition-all duration-300"
                     />
                   </div>
@@ -203,12 +203,14 @@ export default function Contact() {
                 >
                   <label htmlFor="interest" className="text-xs font-semibold text-foreground-muted font-sans">Project Interest</label>
                   <select
+                    required
                     id="interest"
                     name="interest"
                     value={formState.interest}
                     onChange={handleInputChange}
                     className="px-5 py-3 dark:bg-neutral-900 bg-neutral-100 border border-border-line rounded-xl text-foreground-muted text-sm focus:border-gold/50 focus:ring-1 focus:ring-gold/50 outline-none transition-all duration-300 appearance-none cursor-pointer"
                   >
+                    <option value="" disabled>Select</option>
                     <option value="General Inquiry">General Mandate Inquiry</option>
                     <option value="Sales execution">Sales Strategy & Execution</option>
                     <option value="CP Activation">Channel Partner Activation</option>
