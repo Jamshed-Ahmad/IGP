@@ -30,7 +30,7 @@ const projects: Project[] = [
     developer: "Jee N Vee",
     location: "Goregaon East",
     apartments: "35",
-    image: "/assets/projects/prayag-heights-v2.jpg",
+    image: "/assets/projects/bhavya-heights-v2.jpg",
   },
   {
     id: "03",
@@ -38,7 +38,7 @@ const projects: Project[] = [
     developer: "Bhavya Buildtech Ass.",
     location: "Kandivli West",
     apartments: "85",
-    image: "/assets/projects/bhavya-heights-v2.jpg",
+    image: "/assets/projects/prayag-heights-v2.jpg",
   },
   {
     id: "04",
@@ -96,6 +96,15 @@ const projects: Project[] = [
     apartments: "45",
     image: "/assets/projects/orca-heights.jpg",
     description: "Indo Global Properties has been appointed as the exclusive mandate sales partner for Orca Heights, with end-to-end responsibility for driving the project's sales success. Our mandate includes executing comprehensive digital lead generation campaigns, activating and managing the channel partner network, overseeing CRM operations and lead management workflows, and deploying dedicated on-ground sales teams. Through this integrated sales strategy, we aim to maximize lead conversion and achieve a timely and successful project sell-out.",
+  },
+  {
+    id: "11",
+    name: "Silicon Park",
+    developer: "AA Group",
+    location: "Malad West",
+    apartments: "110",
+    image: "/assets/projects/silicon-park.jpg",
+    description: "Indo Global Properties has been appointed as the exclusive mandate sales partner for Silicon Park, entrusted with the end-to-end sales and marketing mandate for the project. Our scope of work includes executing comprehensive digital lead generation campaigns, activating and managing an extensive channel partner network, overseeing CRM and lead management processes, and deploying dedicated on-ground sales teams. By leveraging a fully integrated sales ecosystem, we are committed to maximizing lead conversion, accelerating sales velocity, and achieving a successful project sell-out within the targeted timeline.",
   },
 ];
 
