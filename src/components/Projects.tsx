@@ -5,14 +5,24 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Building, Home, ArrowUpRight, Filter, X } from "lucide-react";
 
-const projects = [
+interface Project {
+  id: string;
+  name: string;
+  developer: string;
+  location: string;
+  apartments: string;
+  image: string;
+  description?: string;
+}
+
+const projects: Project[] = [
   {
     id: "01",
     name: "Agarwal Mannat",
     developer: "Agarwal Group",
     location: "Andheri East",
     apartments: "100",
-    image: "/assets/projects/agarwal-mannat.jpg",
+    image: "/assets/projects/agarwal-mannat-v2.jpg",
   },
   {
     id: "02",
@@ -20,7 +30,7 @@ const projects = [
     developer: "Jee N Vee",
     location: "Goregaon East",
     apartments: "35",
-    image: "/assets/projects/prayag-heights.jpg",
+    image: "/assets/projects/prayag-heights-v2.jpg",
   },
   {
     id: "03",
@@ -28,7 +38,7 @@ const projects = [
     developer: "Bhavya Buildtech Ass.",
     location: "Kandivli West",
     apartments: "85",
-    image: "/assets/projects/bhavya-heights.jpg",
+    image: "/assets/projects/bhavya-heights-v2.jpg",
   },
   {
     id: "04",
@@ -36,7 +46,7 @@ const projects = [
     developer: "Ellora",
     location: "Mira Road East",
     apartments: "90",
-    image: "/assets/projects/ellora-heights.jpg",
+    image: "/assets/projects/ellora-heights-v2.jpg",
   },
   {
     id: "05",
@@ -44,7 +54,7 @@ const projects = [
     developer: "Crystal Group",
     location: "Jogeshwari East",
     apartments: "85",
-    image: "/assets/projects/bhawani-heights.jpg",
+    image: "/assets/projects/bhawani-heights-v2.jpg",
   },
   {
     id: "06",
@@ -52,7 +62,7 @@ const projects = [
     developer: "Bhavya Buildtech Ass.",
     location: "Kandivli West",
     apartments: "85",
-    image: "/assets/projects/krishna-kunj.jpg",
+    image: "/assets/projects/krishna-kunj-v2.jpg",
   },
   {
     id: "07",
@@ -60,7 +70,7 @@ const projects = [
     developer: "Westin Group",
     location: "Chembur West",
     apartments: "75",
-    image: "/assets/projects/ratnadeep-chs.jpg",
+    image: "/assets/projects/ratnadeep-chs-v2.jpg",
   },
   {
     id: "08",
@@ -68,7 +78,7 @@ const projects = [
     developer: "Stans Buildtech",
     location: "Malad West",
     apartments: "200",
-    image: "/assets/projects/ebony-tower.jpg",
+    image: "/assets/projects/95-west-v2.jpg",
   },
   {
     id: "09",
@@ -76,7 +86,16 @@ const projects = [
     developer: "SMGK Developers",
     location: "Jogeshwari West",
     apartments: "90",
-    image: "/assets/projects/95-west.jpg",
+    image: "/assets/projects/ebony-tower-v2.jpg",
+  },
+  {
+    id: "10",
+    name: "Orca Heights",
+    developer: "AA Group",
+    location: "Malad West",
+    apartments: "45",
+    image: "/assets/projects/orca-heights.jpg",
+    description: "Indo Global Properties has been appointed as the exclusive mandate sales partner for Orca Heights, with end-to-end responsibility for driving the project's sales success. Our mandate includes executing comprehensive digital lead generation campaigns, activating and managing the channel partner network, overseeing CRM operations and lead management workflows, and deploying dedicated on-ground sales teams. Through this integrated sales strategy, we aim to maximize lead conversion and achieve a timely and successful project sell-out.",
   },
 ];
 
@@ -85,7 +104,7 @@ const locations = ["All", ...Array.from(new Set(projects.map((p) => p.location.s
 
 export default function Projects() {
   const [filter, setFilter] = useState("All");
-  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const filteredProjects = projects.filter((project) => {
     if (filter === "All") return true;
@@ -149,7 +168,7 @@ export default function Projects() {
                 {/* Image Container with PDF arched shape design */}
                 <div 
                   onClick={() => setSelectedProject(project)}
-                  className="relative w-full aspect-[4/5] rounded-t-full border-2 border-gold/20 group-hover:border-gold/60 transition-premium duration-500 overflow-hidden shadow-2xl cursor-pointer dark:bg-neutral-900 bg-neutral-100"
+                  className="relative w-full aspect-[2/3] rounded-t-full border-2 border-gold/20 group-hover:border-gold/60 transition-premium duration-500 overflow-hidden shadow-2xl cursor-pointer dark:bg-neutral-900 bg-neutral-100"
                 >
                   <Image
                     src={project.image}
@@ -238,12 +257,12 @@ export default function Projects() {
               </button>
 
               {/* Left Side: Arched Image representation */}
-              <div className="w-full md:w-1/2 aspect-[4/5] relative rounded-2xl overflow-hidden border border-border-line shrink-0 dark:bg-neutral-900 bg-neutral-100">
+              <div className="w-full md:w-1/2 aspect-[2/3] relative rounded-2xl overflow-hidden border border-border-line shrink-0 dark:bg-neutral-900 bg-neutral-100">
                 <Image
                   src={selectedProject.image}
                   alt={selectedProject.name}
                   fill
-                  className="object-cover object-center"
+                  className="object-contain object-center"
                 />
               </div>
 
@@ -296,7 +315,7 @@ export default function Projects() {
                   <div className="flex flex-col gap-2">
                     <h4 className="text-sm font-bold dark:text-neutral-200 text-neutral-800">Mandate Overview</h4>
                     <p className="text-xs text-foreground-muted leading-relaxed font-body">
-                      Indo Global Properties serves as the exclusive mandate sales force for {selectedProject.name}. Our mandate scope encompasses executing complete digital lead generation campaigns, activating the channel partner network, managing CRM workflows, and staffing on-ground sales teams to achieve rapid project sell-out.
+                      {selectedProject.description || `Indo Global Properties serves as the exclusive mandate sales force for ${selectedProject.name}. Our mandate scope encompasses executing complete digital lead generation campaigns, activating the channel partner network, managing CRM workflows, and staffing on-ground sales teams to achieve rapid project sell-out.`}
                     </p>
                   </div>
                 </div>
