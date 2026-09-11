@@ -87,7 +87,7 @@ export default function Contact() {
                   <div>
                     <h5 className="text-sm font-semibold dark:text-neutral-200 text-neutral-800">Call Us Direct</h5>
                     <p className="text-xs text-foreground-muted mt-1">
-                      <a href="tel:+917022501222" className="hover:text-gold transition-premium">+91 7022501222</a>
+                      <a href="tel:+919106158849" className="hover:text-gold transition-premium">+91 9106158849</a>
                     </p>
                   </div>
                 </div>
@@ -286,7 +286,7 @@ export default function Contact() {
         <motion.a
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
-          href="tel:+917022501222"
+          href="tel:+919106158849"
           className="p-4 bg-[#c5a880] text-black rounded-full shadow-2xl flex items-center justify-center hover:bg-gold-hover duration-300"
           aria-label="Call Direct"
         >

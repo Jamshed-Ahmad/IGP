@@ -100,7 +100,7 @@ export default function About() {
               <div className="flex-grow">
                 <div className="flex justify-between items-baseline flex-wrap gap-2">
                   <h4 className="text-sm font-bold dark:text-neutral-300 text-neutral-700">Sales Closure Velocity</h4>
-                  <span className="text-lg font-black text-gold">598+ Units</span>
+                  <span className="text-lg font-black text-gold">1100+ Units</span>
                 </div>
                 <p className="text-[11px] text-foreground-muted mt-1 leading-relaxed font-body">
                   Converting generated leads and walk-ins into final bookings with dedicated sales managers.
@@ -119,7 +119,7 @@ export default function About() {
               <div className="flex-grow">
                 <div className="flex justify-between items-baseline flex-wrap gap-2">
                   <h4 className="text-sm font-bold dark:text-neutral-300 text-neutral-700">Value Realization</h4>
-                  <span className="text-lg font-black text-gold">₹269+ Cr.</span>
+                  <span className="text-lg font-black text-gold">₹1500+ Cr.</span>
                 </div>
                 <p className="text-[11px] text-foreground-muted mt-1 leading-relaxed font-body">
                   Maximizing sales values and achieving developer target cash flows under structured mandates.

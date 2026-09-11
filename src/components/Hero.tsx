@@ -132,7 +132,7 @@ export default function Hero() {
             if (decimals) {
               target.textContent = obj.value.toFixed(1) + (isCr ? " Cr+" : "+");
             } else {
-              target.textContent = Math.floor(obj.value).toLocaleString() + (isCr ? " Cr+" : "+");
+              target.textContent = Math.floor(obj.value) + (isCr ? " Cr+" : "+");
             }
           },
         });
@@ -375,7 +375,7 @@ export default function Hero() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-t border-b border-border-line glass rounded-2xl px-6 md:px-10">
           <div>
             <div className="text-3xl md:text-4xl lg:text-5xl font-bold font-sans dark:text-neutral-100 text-neutral-900 mb-1 flex items-baseline">
-              <span className="stat-counter" data-target="598">0</span>
+              <span className="stat-counter" data-target="1100">0</span>
             </div>
             <p className="text-xs uppercase tracking-widest dark:text-neutral-500 text-neutral-400 font-medium">Apartments Sold</p>
           </div>
@@ -383,7 +383,7 @@ export default function Hero() {
           <div>
             <div className="text-3xl md:text-4xl lg:text-5xl font-bold font-sans dark:text-neutral-100 text-neutral-900 mb-1 flex items-baseline">
               <span>₹</span>
-              <span className="stat-counter" data-target="269" data-cr="true">0</span>
+              <span className="stat-counter" data-target="1500" data-cr="true">0</span>
             </div>
             <p className="text-xs uppercase tracking-widest dark:text-neutral-500 text-neutral-400 font-medium">Sales Generated</p>
           </div>
@@ -397,7 +397,7 @@ export default function Hero() {
           
           <div>
             <div className="text-3xl md:text-4xl lg:text-5xl font-bold font-sans dark:text-neutral-100 text-neutral-900 mb-1 flex items-baseline">
-              <span className="stat-counter" data-target="10">0</span>
+              <span className="stat-counter" data-target="12">0</span>
             </div>
             <p className="text-xs uppercase tracking-widest dark:text-neutral-500 text-neutral-400 font-medium">Developer Partners</p>
           </div>
