@@ -297,7 +297,7 @@ export default function Contact() {
         <motion.a
           whileHover={{ scale: 1.08 }}
           whileTap={{ scale: 0.95 }}
-          href="https://wa.me/917022501222?text=Hello%20Indo%20Global%20Properties,%20I%20am%20interested%20in%20your%20mandate%20sales%20services."
+          href="https://wa.me/919106158849?text=Hello%20Indo%20Global%20Properties,%20I%20am%20interested%20in%20your%20mandate%20sales%20services."
           target="_blank"
           rel="noopener noreferrer"
           className="p-4 bg-[#25D366] dark:text-white text-zinc-900 rounded-full shadow-2xl flex items-center justify-center hover:bg-[#20ba56] duration-300"
