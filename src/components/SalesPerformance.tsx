@@ -24,7 +24,7 @@ export default function SalesPerformance() {
 
   // Maximum value for scaling the SVG chart bars
   const maxSold = Math.max(...chartData.map((d) => d.sold));
-  const chartHeight = 240;
+  const chartHeight = 210;
 
   return (
     <section id="performance" className="relative py-24 md:py-32 bg-background-sec overflow-hidden border-t border-b border-border-line">
@@ -98,16 +98,16 @@ export default function SalesPerformance() {
               </div>
 
               {/* Chart SVG Canvas */}
-              <div className="relative w-full h-[260px] flex items-end">
-                <svg className="w-full h-full" viewBox="0 0 600 260" preserveAspectRatio="none">
+              <div className="relative w-full h-[280px]">
+                <svg className="w-full h-full overflow-visible" viewBox="0 0 600 280" preserveAspectRatio="none">
                   {/* Grid Lines */}
                   {[0, 0.25, 0.5, 0.75, 1].map((ratio) => (
                     <line
                       key={ratio}
                       x1="0"
-                      y1={chartHeight * (1 - ratio) + 10}
+                      y1={chartHeight * (1 - ratio) + 15}
                       x2="600"
-                      y2={chartHeight * (1 - ratio) + 10}
+                      y2={chartHeight * (1 - ratio) + 15}
                       stroke="var(--border-line)"
                       strokeWidth="1"
                     />
@@ -119,7 +119,7 @@ export default function SalesPerformance() {
                     const spacing = 100;
                     const x = index * spacing + 35;
                     const barHeight = (d.sold / maxSold) * (chartHeight - 40);
-                    const y = chartHeight - barHeight + 10;
+                    const y = chartHeight - barHeight + 15;
                     
                     return (
                       <g key={d.year}>
@@ -128,7 +128,7 @@ export default function SalesPerformance() {
                           x={x - 15}
                           y="0"
                           width={barWidth + 30}
-                          height="240"
+                          height="230"
                           fill="transparent"
                           className="cursor-pointer"
                           onMouseEnter={() => setHoveredBar(index)}
@@ -137,7 +137,7 @@ export default function SalesPerformance() {
                         
                         {/* Actual Gold Bar */}
                         <motion.rect
-                          initial={{ height: 0, y: chartHeight + 10 }}
+                          initial={{ height: 0, y: chartHeight + 15 }}
                           whileInView={{ height: barHeight, y: y }}
                           viewport={{ once: true }}
                           transition={{ duration: 1, delay: index * 0.1, ease: "easeOut" }}
@@ -175,12 +175,12 @@ export default function SalesPerformance() {
                         {/* X Axis Labels */}
                         <text
                           x={x + barWidth / 2}
-                          y={chartHeight + 25}
-                          fill="#737373"
-                          fontSize="10"
-                          fontWeight="semibold"
+                          y={chartHeight + 42}
+                          fill="currentColor"
+                          fontSize="12"
+                          fontWeight="600"
                           textAnchor="middle"
-                          className="font-sans"
+                          className="font-sans text-neutral-600 dark:text-neutral-400"
                         >
                           {d.year}
                         </text>
