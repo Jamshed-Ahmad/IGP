@@ -24,11 +24,18 @@ export default function Footer() {
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
               <Image
-                src="/assets/logo.png"
+                src="/assets/igp-logo-v2.png"
                 alt="Indo Global Properties"
-                width={200}
-                height={35}
-                className="w-auto h-10 object-contain brightness-105"
+                width={180}
+                height={66}
+                className="w-auto h-11 object-contain dark:hidden block"
+              />
+              <Image
+                src="/assets/igp-logo-dark-v2.png"
+                alt="Indo Global Properties"
+                width={180}
+                height={66}
+                className="w-auto h-11 object-contain hidden dark:block"
               />
             </div>
             <p className="text-sm leading-relaxed text-foreground-muted">

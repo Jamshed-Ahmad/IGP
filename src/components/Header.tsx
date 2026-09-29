@@ -96,11 +96,19 @@ export default function Header() {
         >
           <a href="#" className="relative flex items-center gap-3 group" onClick={(e) => handleScrollTo(e, "#top")}>
             <Image
-              src="/assets/logo.png"
+              src="/assets/igp-logo-v2.png"
               alt="Indo Global Properties"
-              width={180}
-              height={32}
-              className="w-auto h-8 md:h-10 object-contain brightness-105 group-hover:scale-[1.02] transition-premium duration-300"
+              width={160}
+              height={59}
+              className="w-auto h-9 md:h-11 object-contain dark:hidden block group-hover:scale-[1.02] transition-premium duration-300"
+              priority
+            />
+            <Image
+              src="/assets/igp-logo-dark-v2.png"
+              alt="Indo Global Properties"
+              width={160}
+              height={59}
+              className="w-auto h-9 md:h-11 object-contain hidden dark:block group-hover:scale-[1.02] transition-premium duration-300"
               priority
             />
           </a>
