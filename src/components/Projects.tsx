@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Building, Home, ArrowUpRight, Filter, X } from "lucide-react";
+import { MapPin, Building, Home, ArrowUpRight, Filter, X, ZoomIn, ZoomOut } from "lucide-react";
 
 interface Project {
   id: string;
@@ -12,6 +12,7 @@ interface Project {
   location: string;
   apartments: string;
   image: string;
+  status?: string;
   description?: string;
 }
 
@@ -103,8 +104,22 @@ const projects: Project[] = [
     developer: "AA Group",
     location: "Malad West",
     apartments: "110",
-    image: "/assets/projects/silicon-park.jpg",
+    image: "/assets/projects/silicon-park-v2.jpg",
     description: "Indo Global Properties has been appointed as the exclusive mandate sales partner for Silicon Park, entrusted with the end-to-end sales and marketing mandate for the project. Our scope of work includes executing comprehensive digital lead generation campaigns, activating and managing an extensive channel partner network, overseeing CRM and lead management processes, and deploying dedicated on-ground sales teams. By leveraging a fully integrated sales ecosystem, we are committed to maximizing lead conversion, accelerating sales velocity, and achieving a successful project sell-out within the targeted timeline.",
+  },
+  {
+    id: "12",
+    name: "Royal Lagoon",
+    developer: "Royal Realtors",
+    location: "Malad West",
+    apartments: "502",
+    image: "/assets/projects/royal-lagoon.jpg",
+    status: "Active Mandate",
+    description: `IndoGlobal Properties is the exclusive sole selling mandate partner for Royal Lagoon, responsible for overseeing and driving the project's sales and marketing activities. Under this exclusive mandate, IndoGlobal Properties leads sales operations, channel partner management, customer engagement, lead generation, and strategic marketing initiatives to maximize project visibility and sales performance.
+
+Through a focused, result-oriented approach, IndoGlobal Properties aims to connect prospective homebuyers and investors with Royal Lagoon, ensuring a streamlined sales process and a strong market presence.
+
+Exclusive Sales & Marketing Partner | Royal Lagoon`,
   },
 ];
 
@@ -114,6 +129,7 @@ const locations = ["All", ...Array.from(new Set(projects.map((p) => p.location.s
 export default function Projects() {
   const [filter, setFilter] = useState("All");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [isZoomed, setIsZoomed] = useState(false);
 
   const filteredProjects = projects.filter((project) => {
     if (filter === "All") return true;
@@ -254,25 +270,61 @@ export default function Projects() {
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.9, y: 20 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
+              onClick={(e) => e.stopPropagation()}
               className="relative w-full max-w-4xl glass border border-border-line rounded-3xl overflow-hidden shadow-2xl p-6 md:p-10 flex flex-col md:flex-row gap-8 max-h-[90vh] overflow-y-auto"
             >
               {/* Close Button - fixed on mobile for ease of access, absolute on desktop */}
               <button
-                onClick={() => setSelectedProject(null)}
+                onClick={() => {
+                  setSelectedProject(null);
+                  setIsZoomed(false);
+                }}
                 className="fixed top-4 right-4 md:absolute md:top-6 md:right-6 z-50 p-2.5 rounded-full bg-neutral-900/80 md:bg-white/5 border border-border-line text-white md:text-inherit hover:border-gold hover:text-gold transition-premium duration-300 shadow-lg md:shadow-none"
                 aria-label="Close details"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              {/* Left Side: Arched Image representation */}
-              <div className="w-full md:w-1/2 aspect-[2/3] relative rounded-2xl overflow-hidden border border-border-line shrink-0 dark:bg-neutral-900 bg-neutral-100">
+              {/* Left Side: Arched Image representation with Zoom */}
+              <div 
+                onClick={() => setIsZoomed(!isZoomed)}
+                className="w-full md:w-1/2 aspect-[2/3] relative rounded-2xl overflow-hidden border border-border-line shrink-0 dark:bg-neutral-900 bg-neutral-100 cursor-pointer group"
+                title="Click to zoom image"
+              >
                 <Image
                   src={selectedProject.image}
                   alt={selectedProject.name}
                   fill
-                  className="object-contain object-center"
+                  className={`object-cover object-center transition-transform duration-500 ease-out ${
+                    isZoomed ? "scale-150" : "group-hover:scale-105"
+                  }`}
                 />
+
+                {/* Subtle gradient overlay at bottom */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
+
+                {/* Interactive Zoom Control Button */}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsZoomed(!isZoomed);
+                  }}
+                  className="absolute bottom-3 right-3 z-10 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-md border border-white/20 text-white hover:text-gold hover:border-gold transition-all duration-300 shadow-lg flex items-center gap-1.5 text-xs font-medium cursor-pointer"
+                  aria-label="Toggle zoom"
+                >
+                  {isZoomed ? (
+                    <>
+                      <ZoomOut className="w-3.5 h-3.5 text-gold" />
+                      <span>Reset</span>
+                    </>
+                  ) : (
+                    <>
+                      <ZoomIn className="w-3.5 h-3.5 text-gold" />
+                      <span>Zoom</span>
+                    </>
+                  )}
+                </button>
               </div>
 
               {/* Right Side: Details */}
@@ -316,14 +368,14 @@ export default function Projects() {
                       <Home className="w-5 h-5 text-gold" />
                       <div>
                         <p className="text-[10px] uppercase tracking-wider dark:text-neutral-500 text-neutral-400">Status</p>
-                        <p className="text-sm font-semibold dark:text-neutral-200 text-neutral-800">Active Mandate</p>
+                        <p className="text-sm font-semibold dark:text-neutral-200 text-neutral-800">{selectedProject.status || "Active Mandate"}</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-2">
                     <h4 className="text-sm font-bold dark:text-neutral-200 text-neutral-800">Mandate Overview</h4>
-                    <p className="text-xs text-foreground-muted leading-relaxed font-body">
+                    <p className="text-xs text-foreground-muted leading-relaxed font-body whitespace-pre-line">
                       {selectedProject.description || `Indo Global Properties serves as the exclusive mandate sales force for ${selectedProject.name}. Our mandate scope encompasses executing complete digital lead generation campaigns, activating the channel partner network, managing CRM workflows, and staffing on-ground sales teams to achieve rapid project sell-out.`}
                     </p>
                   </div>

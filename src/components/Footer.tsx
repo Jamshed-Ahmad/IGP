@@ -119,11 +119,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-gold shrink-0" />
-                <a href="mailto:info@indoglobalproperties.com" className="hover:text-gold transition-premium duration-300">info@indoglobalproperties.com</a>
+                <a href="mailto:info@indoglobal.properties" className="hover:text-gold transition-premium duration-300">info@indoglobal.properties</a>
               </li>
               <li className="flex items-center gap-3">
                 <Globe className="w-4 h-4 text-gold shrink-0" />
-                <a href="https://www.indoglobalproperties.com" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-premium duration-300">www.indoglobalproperties.com</a>
+                <a href="https://www.indoglobal.properties" target="_blank" rel="noopener noreferrer" className="hover:text-gold transition-premium duration-300">www.indoglobal.properties</a>
               </li>
             </ul>
           </div>

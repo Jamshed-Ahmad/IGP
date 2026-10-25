@@ -99,7 +99,7 @@ export default function Contact() {
                   <div>
                     <h5 className="text-sm font-semibold dark:text-neutral-200 text-neutral-800">Email Inquiry</h5>
                     <p className="text-xs text-foreground-muted mt-1">
-                      <a href="mailto:info@indoglobalproperties.com" className="hover:text-gold transition-premium">info@indoglobalproperties.com</a>
+                      <a href="mailto:info@indoglobal.properties" className="hover:text-gold transition-premium">info@indoglobal.properties</a>
                     </p>
                   </div>
                 </div>

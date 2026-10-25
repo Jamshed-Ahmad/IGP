@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Indo Global Properties | The Real Estate Sales Force",
     description: "Beyond Sales. Built for Growth. Indo Global Properties is a premium real estate mandate sales specialist.",
-    url: "https://www.indoglobalproperties.com",
+    url: "https://www.indoglobal.properties",
     siteName: "Indo Global Properties",
     locale: "en_US",
     type: "website",

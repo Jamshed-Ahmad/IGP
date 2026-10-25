@@ -11,7 +11,7 @@ const leaders = [
     bio: "At the helm of Indo Global Properties, Imran Quadri is a multi-disciplinary entrepreneur with experience across hospitality and real estate. His exposure to diverse business environments has shaped a strong understanding of people, positioning, micro-markets, and buyer behavior. With a clear vision to build a performance-driven sales organization, he founded Indo Global Properties on the principles of speed, discipline, and execution excellence. His hands-on leadership, strategic clarity, and market insight continue to shape the company’s culture, strengthen its credibility, and drive consistent growth in a competitive real estate landscape.",
     image: "/assets/founder.png",
     linkedin: "https://in.linkedin.com/in/sayyedimranqadri?trk=profile-badge",
-    email: "imran@indoglobalproperties.com",
+    email: "imran@indoglobal.properties",
   },
   {
     name: "Mahesh Bankar",
@@ -19,7 +19,7 @@ const leaders = [
     bio: "With over 15 years of real estate experience, he brings strong strategic insight and market understanding to Indo Global Properties. His expertise in micro-markets, project positioning, and sales planning adds direction to every mandate. With a clear understanding of developer expectations and buyer behavior, he drives focused and result-oriented execution. His disciplined approach continues to strengthen the company’s growth, presence, and long-term value.",
     image: "/assets/cofounder.png",
     linkedin: "#",
-    email: "mahesh@indoglobalproperties.com",
+    email: "mahesh@indoglobal.properties",
   },
 ];
 
